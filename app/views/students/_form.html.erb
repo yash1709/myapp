@@ -1,0 +1,26 @@
+<%= form_with(model: @student, local: true) do |form| %>
+  <% if @student.errors.any? %>
+        <% @student.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save Changes" %>
+  </div>
+<% end %>
